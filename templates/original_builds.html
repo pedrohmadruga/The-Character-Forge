@@ -68,7 +68,6 @@
         <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
         <ul class="personagens-list">
           {% for personagem in personagens %}
-            {% if personagem.tipo_personagem == 'Original' %}
                 <li class="personagem-item">
                   <div class="personagem-imagem">
                     <img src="{{ personagem.image.url }}" alt="{{ personagem.nome }}" width="300">
@@ -81,7 +80,6 @@
                       <p><strong><a href="{% url 'character_detail' personagem.pk %}">Click here for more info</a></strong></p>
                   </div>
                 </li>
-            {% endif %}
         {% empty %}
             <li>No character found.</li>
         {% endfor %}

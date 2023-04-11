@@ -32,13 +32,6 @@ class PersonagemModel(models.Model):
     ponto_positivo = models.TextField(default='')
     ponto_negativo = models.TextField(default='')
 
-    TIPO_PERSONAGEM_CHOICES = (
-        ("Original", "Original"),
-        ("Recreation", "Recreation"),
-    )
-
-    tipo_personagem = models.CharField(choices=TIPO_PERSONAGEM_CHOICES, default='Original')
-
     def __str__(self):
         return self.nome
 

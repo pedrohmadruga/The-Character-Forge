@@ -10,7 +10,7 @@ class OriginalBuildsView(ListView):
     model = models.PersonagemModel
     template_name = 'original_builds.html'
     context_object_name = 'personagens'
-    paginate_by = 5
+    paginate_by = 3
 
 
 class PersonagemOriginalDetailView(DetailView):

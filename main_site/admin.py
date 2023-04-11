@@ -4,7 +4,7 @@ from main_site import models
 
 @admin.register(models.PersonagemModel)
 class PersonagemOriginalAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'raca', 'classe', 'tipo_personagem')
+    list_display = ('nome', 'raca', 'classe',)
 
 
 @admin.register(models.Tag)
