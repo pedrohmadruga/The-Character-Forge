@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class PersonagemOriginalModel(models.Model):
+class PersonagemModel(models.Model):
     nome = models.CharField(max_length=100, default='')
     raca = models.CharField(max_length=50, default='')
     classe = models.CharField(max_length=100, default='')

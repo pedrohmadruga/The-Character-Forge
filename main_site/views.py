@@ -7,13 +7,13 @@ class MainPageView(TemplateView):
 
 
 class OriginalBuildsView(ListView):
-    model = models.PersonagemOriginalModel
+    model = models.PersonagemModel
     template_name = 'original_builds.html'
     context_object_name = 'personagens'
     paginate_by = 5
 
 
 class PersonagemOriginalDetailView(DetailView):
-    model = models.PersonagemOriginalModel
+    model = models.PersonagemModel
     template_name = 'character_detail.html'
     context_object_name = 'personagem'
