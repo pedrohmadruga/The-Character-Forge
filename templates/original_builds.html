@@ -1,0 +1,113 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Original Builds</title>
+    <style>
+        .card-header {
+            font-size: 64px;
+            background-color: #e61720;
+            text-align:center;
+            color:white;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px #000;
+        }
+        .card-body {
+            font-size: 24px;
+            text-align: justify;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .personagens-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .personagem-item {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 40px;
+        }
+
+        .personagem-imagem {
+            margin-right: 20px;
+            width: 300px;
+            min-width:300px;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .personagem-imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        p {
+        font-size:20px;
+        }
+
+    </style>
+</head>
+<body style="background-color: #faebeb">
+<div class="card" style="width:60%; margin: auto;">
+    <h2 class="card-header">ORIGINAL BUILDS</h2>
+
+    <div class="card-body">
+        <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
+        <ul class="personagens-list">
+          {% for personagem in personagens %}
+            {% if personagem.tipo_personagem == 'Original' %}
+                <li class="personagem-item">
+                  <div class="personagem-imagem">
+                    <img src="{{ personagem.image.url }}" alt="{{ personagem.nome }}" width="300">
+                  </div>
+                  <div class="personagem-info">
+                      <h3>{{ personagem.nome }}</h3>
+                      <p><strong>Race:</strong> {{ personagem.raca }}</p>
+                      <p><strong>Class:</strong> {{ personagem.classe }}</p>
+                      <p><strong>Description:</strong> {{ personagem.descricao }}</p>
+                      <p><strong><a href="{% url 'character_detail' personagem.pk %}">Click here for more info</a></strong></p>
+                  </div>
+                </li>
+            {% endif %}
+        {% empty %}
+            <li>No character found.</li>
+        {% endfor %}
+        </ul>
+    </div>
+
+    {% if is_paginated %}
+  <div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; previous</a>
+        {% endif %}
+
+        <span class="current-page">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next &rsaquo;</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+  </div>
+  {% endif %}
+    
+</div>
+</body>
+</html>
