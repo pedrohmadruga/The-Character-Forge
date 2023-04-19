@@ -15,5 +15,5 @@ class OriginalBuildsView(ListView):
 
 class PersonagemOriginalDetailView(DetailView):
     model = models.PersonagemModel
-    template_name = 'character_detail.html'
+    template_name = 'original_character_detail.html'
     context_object_name = 'personagem'

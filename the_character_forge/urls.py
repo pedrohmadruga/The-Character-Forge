@@ -8,5 +8,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.MainPageView.as_view(), name='index'),
     path('original_builds/', views.OriginalBuildsView.as_view(), name='original_builds'),
-    path('character_detail/<int:pk>/', views.PersonagemOriginalDetailView.as_view(), name='character_detail')
+    path('original_character_detail/<int:pk>/', views.PersonagemOriginalDetailView.as_view(), name='original_character_detail')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -67,6 +67,7 @@
     <div class="card-body">
         <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
         <ul class="personagens-list">
+          <h5 style="text-align> left;"><a href="{% url 'index' %}">Main page</a></h5>
           {% for personagem in personagens %}
                 <li class="personagem-item">
                   <div class="personagem-imagem">
@@ -77,35 +78,40 @@
                       <p><strong>Race:</strong> {{ personagem.raca }}</p>
                       <p><strong>Class:</strong> {{ personagem.classe }}</p>
                       <p><strong>Description:</strong> {{ personagem.descricao }}</p>
-                      <p><strong><a href="{% url 'character_detail' personagem.pk %}">Click here for more info</a></strong></p>
+                      <p><strong><a href="{% url 'original_character_detail' personagem.pk %}">Click here for more info</a></strong></p>
                   </div>
                 </li>
         {% empty %}
             <li>No character found.</li>
         {% endfor %}
-        </ul>
-    </div>
 
     {% if is_paginated %}
-  <div class="pagination">
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; previous</a>
-        {% endif %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">&lsaquo; previous</a>
+                {% endif %}
+                <span class="current-page">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next &rsaquo;</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                    <div style="clear: both;"></div>
+                    <form method="get" class="jump-to-page" style="font-size:16px;">
+                        <label for="id_page_number">Jump to page:</label>
+                        <input type="number" name="page" id="id_page_number" min="1" max="{{ page_obj.paginator.num_pages }}" value="{{ page_obj.number }}">
+                        <button type="submit">Go</button>
+                    </form>
+            <div style="clear: both;"></div>
+                {% endif %}
+            </span>
 
-        <span class="current-page">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-        </span>
-
-        {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.next_page_number }}">next &rsaquo;</a>
-            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
-    </span>
-  </div>
-  {% endif %}
-    
+        </div>
+    {% endif %}
+        </ul>
+    </div>
 </div>
 </body>
 </html>

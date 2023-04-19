@@ -22,12 +22,13 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color: #faebeb">
 <div class="card" style="width:60%; margin: auto;">
     <h2 class="card-header">THE CHARACTER FORGE</h2>
     <div class="card-body">
         <h1 style="text-align: center; font-size: 50px;">{{ personagem.nome }}</h1><br/>
         <ul class="personagens-list">
+            <h5 style="text-align> left;"><a href="{% url 'original_builds' %}">Go back</a></h5>
             <div class="personagem-imagem">
               <img src="{{ personagem.image.url }}" alt="{{ personagem.nome }}" width="300">
             </div>
@@ -81,7 +82,6 @@
                 <p>{{ personagem.ponto_positivo|safe }}</p>
                 <h3>CONS</h3>
                 <p>{{ personagem.ponto_negativo|safe }}</p>
-
             </div>
         </ul>
     </div>
