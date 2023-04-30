@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class PersonagemModel(models.Model):
+class PersonagemOriginal(models.Model):
     nome = models.CharField(max_length=100, default='')
     raca = models.CharField(max_length=50, default='')
     classe = models.CharField(max_length=100, default='')
@@ -9,6 +9,7 @@ class PersonagemModel(models.Model):
     tags = models.ManyToManyField('Tag')
     descricao = models.TextField(max_length=250, default='')
     backstory = models.TextField(default='')
+    nivel_0 = models.TextField(default='')
     nivel_1 = models.TextField(default='')
     nivel_2 = models.TextField(default='')
     nivel_3 = models.TextField(default='')
