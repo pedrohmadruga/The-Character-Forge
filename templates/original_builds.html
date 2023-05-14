@@ -79,10 +79,10 @@
     <div class="card-body">
         <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
 
-          <h5 style="text-align> left;"><a href="{% url 'index' %}">Main page</a></h5>
-          <div class="d-flex justify-content-end"> <!-- Adicione as classes d-flex justify-content-end aqui -->
+          <div class="d-flex justify-content-between">
+              <a href="{% url 'index' %}" style="color: white; text-decoration: none;"><button type="button" class="btn btn-primary">Main page</button></a>
               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#advancedSearchModal">Advanced Search</button>
-          </div>
+          </div><br>
             <!-- Modal -->
             <div class="modal fade" id="advancedSearchModal" tabindex="-1" role="dialog" aria-labelledby="advancedSearchModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
