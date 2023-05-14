@@ -11,7 +11,7 @@ class OriginalBuildsView(ListView):
     model = models.PersonagemOriginal
     template_name = 'original_builds.html'
     context_object_name = 'personagens'
-    paginate_by = 3
+    paginate_by = 5
 
     def get_queryset(self):
         queryset = super().get_queryset()

@@ -79,10 +79,10 @@
     <div class="card-body">
         <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
 
-        <ul class="personagens-list">
           <h5 style="text-align> left;"><a href="{% url 'index' %}">Main page</a></h5>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#advancedSearchModal">Advanced Search</button>
-
+          <div class="d-flex justify-content-end"> <!-- Adicione as classes d-flex justify-content-end aqui -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#advancedSearchModal">Advanced Search</button>
+          </div>
             <!-- Modal -->
             <div class="modal fade" id="advancedSearchModal" tabindex="-1" role="dialog" aria-labelledby="advancedSearchModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -95,17 +95,19 @@
                   </div>
                   <div class="modal-body">
                     <form method="GET" class="search-form">
-                      <div class="form-group">
-                        <label for="search_name">Name:</label>
-                        <input type="text" name="name" id="search_name">
-                      </div>
-                      <div class="form-group">
-                        <label for="search_race">Race:</label>
-                        <input type="text" name="race" id="search_race">
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="search_name">Name:</label>
+                          <input type="text" name="name" id="search_name" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="search_race">Race:</label>
+                          <input type="text" name="race" id="search_race" class="form-control">
+                        </div>
                       </div>
                       <div class="form-group">
                         <label for="search_class">Class:</label>
-                        <input type="text" name="class" id="search_class">
+                        <input type="text" name="class" id="search_class" class="form-control">
                       </div>
                       <button type="submit" class="btn btn-primary">Search</button>
                     </form>
@@ -156,7 +158,6 @@
 
         </div>
     {% endif %}
-        </ul>
     </div>
 </div>
 </body>
