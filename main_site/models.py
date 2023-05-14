@@ -6,7 +6,6 @@ class PersonagemOriginal(models.Model):
     raca = models.CharField(max_length=50, default='')
     classe = models.CharField(max_length=100, default='')
     image = models.ImageField(upload_to='media/', blank=True)
-    tags = models.ManyToManyField('Tag')
     descricao = models.TextField(max_length=250, default='')
     backstory = models.TextField(default='')
     nivel_0 = models.TextField(default='')
@@ -32,13 +31,6 @@ class PersonagemOriginal(models.Model):
     nivel_20 = models.TextField(default='')
     ponto_positivo = models.TextField(default='')
     ponto_negativo = models.TextField(default='')
-
-    def __str__(self):
-        return self.nome
-
-
-class Tag(models.Model):
-    nome = models.CharField(max_length=50, default='')
 
     def __str__(self):
         return self.nome
