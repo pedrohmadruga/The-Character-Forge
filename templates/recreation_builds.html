@@ -74,7 +74,7 @@
 </head>
 <body style="background-color: #faebeb">
 <div class="card">
-    <h2 class="card-header">ORIGINAL BUILDS</h2>
+    <h2 class="card-header">RECREATION BUILDS</h2>
 
     <div class="card-body">
         <h1 style="text-align: center; font-size: 50px;">Characters list</h1><br/>
@@ -111,7 +111,7 @@
                       </div>
                       <div class="d-flex justify-content-between">
                           <button type="submit" class="btn btn-primary">Search</button>
-                          <a href="{% url 'original_builds' %}" style="color: white; text-decoration: none;"><button type="button" class="btn btn-primary">Reset filters</button></a>
+                          <a href="{% url 'recreation_builds' %}" style="color: white; text-decoration: none;"><button type="button" class="btn btn-primary">Reset filters</button></a>
                       </div><br>
                     </form>
                   </div>
@@ -129,7 +129,7 @@
                       <p><strong>Race:</strong> {{ personagem.raca }}</p>
                       <p><strong>Class:</strong> {{ personagem.classe }}</p>
                       <p><strong>Description:</strong> {{ personagem.descricao }}</p>
-                      <p><strong><a href="{% url 'original_character_detail' personagem.pk %}">Click here for more info</a></strong></p>
+                      <p><strong><a href="{% url 'recreation_character_detail' personagem.pk %}">Click here for more info</a></strong></p>
                   </div>
                 </li>
         {% empty %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Detailed Character</title>
+    <style>
+        .card-header {
+            font-size: 64px;
+            background-color: #e61720;
+            text-align:center;
+            color:white;
+            text-shadow:
+                -1px -1px 0 #000,
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px #000;
+        }
+        .card-body {
+            font-size: 24px;
+            text-align: justify;
+        }
+        .card {
+            width: 60%;
+            margin: auto;
+        }
+        @media (max-width: 1300px) {
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #faebeb">
+<div class="card">
+    <h2 class="card-header">THE CHARACTER FORGE</h2>
+    <div class="card-body">
+        <h1 style="text-align: center; font-size: 50px;">{{ personagem.nome }}</h1><br/>
+        <ul class="personagens-list">
+            <h5 style="text-align> left;"><a href="{% url 'recreation_builds' %}">Go back</a></h5>
+            <div class="personagem-imagem">
+              <img src="{{ personagem.image.url }}" alt="{{ personagem.nome }}" width="300">
+            </div>
+            <div class="personagem-info">
+                <p><strong>Race:</strong> {{ personagem.raca }}</p>
+                <p><strong>Class:</strong> {{ personagem.classe }}</p>
+                <p><strong>Description:</strong> {{ personagem.descricao|safe }}</p>
+                <h3>BACKSTORY</h3>
+                <p>{{ personagem.backstory|safe }}</p>
+                <h3>RACE, BACKGROUND AND OTHERS</h3>
+                <p>{{ personagem.nivel_0|safe }}</p>
+                <h3>LEVEL 1</h3>
+                <p>{{ personagem.nivel_1|safe }}</p>
+                <h3>LEVEL 2</h3>
+                <p>{{ personagem.nivel_2|safe }}</p>
+                <h3>LEVEL 3</h3>
+                <p>{{ personagem.nivel_3|safe }}</p>
+                <h3>LEVEL 4</h3>
+                <p>{{ personagem.nivel_4|safe }}</p>
+                <h3>LEVEL 5</h3>
+                <p>{{ personagem.nivel_5|safe }}</p>
+                <h3>LEVEL 6</h3>
+                <p>{{ personagem.nivel_6|safe }}</p>
+                <h3>LEVEL 7</h3>
+                <p>{{ personagem.nivel_7|safe }}</p>
+                <h3>LEVEL 8</h3>
+                <p>{{ personagem.nivel_8|safe }}</p>
+                <h3>LEVEL 9</h3>
+                <p>{{ personagem.nivel_9|safe }}</p>
+                <h3>LEVEL 10</h3>
+                <p>{{ personagem.nivel_10|safe }}</p>
+                <h3>LEVEL 11</h3>
+                <p>{{ personagem.nivel_11|safe }}</p>
+                <h3>LEVEL 12</h3>
+                <p>{{ personagem.nivel_12|safe }}</p>
+                <h3>LEVEL 13</h3>
+                <p>{{ personagem.nivel_13|safe }}</p>
+                <h3>LEVEL 14</h3>
+                <p>{{ personagem.nivel_14|safe }}</p>
+                <h3>LEVEL 15</h3>
+                <p>{{ personagem.nivel_15|safe }}</p>
+                <h3>LEVEL 16</h3>
+                <p>{{ personagem.nivel_16|safe }}</p>
+                <h3>LEVEL 17</h3>
+                <p>{{ personagem.nivel_17|safe }}</p>
+                <h3>LEVEL 18</h3>
+                <p>{{ personagem.nivel_18|safe }}</p>
+                <h3>LEVEL 19</h3>
+                <p>{{ personagem.nivel_19|safe }}</p>
+                <h3>LEVEL 20</h3>
+                <p>{{ personagem.nivel_20|safe }}</p>
+                <h3>PROS</h3>
+                <p>{{ personagem.ponto_positivo|safe }}</p>
+                <h3>CONS</h3>
+                <p>{{ personagem.ponto_negativo|safe }}</p>
+            </div>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
