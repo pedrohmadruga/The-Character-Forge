@@ -1,5 +1,5 @@
-{% load bootstrap4 %}
 {% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +52,7 @@
  		</div>
         <div class="card-body">
             <h3 style="text-align:center; font-size: 50px;"><a href="{% url 'original_builds' %}">ORIGINAL BUILDS</a></h3>
-            <br/><img src="https://preview.redd.it/a1hi3vu625m71.png?auto=webp&s=6db5c21c1611815c17936ad93f3d1359c6ce48f4" class="center"><br/>
+            <br/><img src="{% static 'img/original_builds_img.jpg' %}" class="center"><br/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et magna arcu. Praesent fermentum ut est non ullamcorper. Vivamus ac laoreet justo. Proin posuere volutpat elit, pulvinar iaculis nunc finibus a. Fusce auctor efficitur justo eu malesuada. Fusce ultricies egestas fermentum. Duis cursus fringilla bibendum. Aliquam id metus ipsum. Proin luctus libero non nisl ultrices, non hendrerit tortor pretium. Integer dapibus dui in mi gravida egestas.</p>
             <p>Pellentesque commodo venenatis dui quis venenatis. Etiam blandit, massa eget interdum laoreet, odio nisl aliquam nisl, non tempus magna lacus a mi. Nulla at hendrerit dolor. Donec auctor a urna eu imperdiet. Sed non nisi laoreet, egestas quam sed, ultrices odio. Mauris egestas nisi ut nulla blandit pellentesque. Curabitur a mauris sit amet odio bibendum facilisis at eu ex.</p>
             <p>Aliquam ultricies felis et laoreet dictum. Mauris maximus leo lobortis, bibendum odio nec, interdum ipsum. Fusce et est posuere, vulputate ligula nec, pellentesque turpis. Nulla non tempor orci, non euismod eros. Duis malesuada sollicitudin lacus, vestibulum lobortis augue venenatis eget. Vivamus id rhoncus purus, id mollis arcu. Praesent nunc orci, sodales vitae magna quis, convallis fringilla odio. Phasellus in nunc in nisi ultrices rhoncus.</p>
@@ -61,7 +61,7 @@
         </div>
         <div class="card-body">
             <h3 style="text-align:center; font-size: 50px;"><a href="{% url 'recreation_builds' %}">RECREATIONS</a></h3>
-            <br/><img src="https://www.otempo.com.br/image/contentid/policy:1.2834578:1679492403/image-Spin-off-de-John-Wick-vai-explorar-origem-do-personagem-de-Keanu-Reeves.jpg" class="center"><br/>
+            <br/><img src="{% static 'img/recreation_builds_img.jpg' %}" class="center"><br/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et magna arcu. Praesent fermentum ut est non ullamcorper. Vivamus ac laoreet justo. Proin posuere volutpat elit, pulvinar iaculis nunc finibus a. Fusce auctor efficitur justo eu malesuada. Fusce ultricies egestas fermentum. Duis cursus fringilla bibendum. Aliquam id metus ipsum. Proin luctus libero non nisl ultrices, non hendrerit tortor pretium. Integer dapibus dui in mi gravida egestas.</p>
             <p>Pellentesque commodo venenatis dui quis venenatis. Etiam blandit, massa eget interdum laoreet, odio nisl aliquam nisl, non tempus magna lacus a mi. Nulla at hendrerit dolor. Donec auctor a urna eu imperdiet. Sed non nisi laoreet, egestas quam sed, ultrices odio. Mauris egestas nisi ut nulla blandit pellentesque. Curabitur a mauris sit amet odio bibendum facilisis at eu ex.</p>
             <p>Aliquam ultricies felis et laoreet dictum. Mauris maximus leo lobortis, bibendum odio nec, interdum ipsum. Fusce et est posuere, vulputate ligula nec, pellentesque turpis. Nulla non tempor orci, non euismod eros. Duis malesuada sollicitudin lacus, vestibulum lobortis augue venenatis eget. Vivamus id rhoncus purus, id mollis arcu. Praesent nunc orci, sodales vitae magna quis, convallis fringilla odio. Phasellus in nunc in nisi ultrices rhoncus.</p>
